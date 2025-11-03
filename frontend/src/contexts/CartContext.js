@@ -65,10 +65,18 @@ export const CartProvider = ({ children }) => {
   };
 
   const getSecurityDeposit = () => {
-    // Security deposit only for cycles - will be calculated based on duration at checkout
-    // For display purposes, show base deposit (₹2k)
-    const hasCycle = cart.some(item => item.category === 'cycle');
-    return hasCycle ? 2000 : 0;
+    // Security deposit based on selected plan
+    const cycleItem = cart.find(item => item.category === 'cycle');
+    if (!cycleItem) return 0;
+    
+    // If plan is selected, use plan-specific deposit
+    if (cycleItem.selectedPlan) {
+      // Daily and Weekly: ₹2,000, Monthly: ₹5,000
+      return cycleItem.selectedPlan.id === 'monthly' ? 5000 : 2000;
+    }
+    
+    // Default to ₹2,000
+    return 2000;
   };
 
   return (
