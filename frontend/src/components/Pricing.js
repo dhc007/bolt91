@@ -77,6 +77,11 @@ const Pricing = ({ onSelectPlan }) => {
     }
   ];
 
+  const handlePlanClick = (planId) => {
+    console.log('Plan clicked:', planId);
+    setSelectedPlan(planId);
+  };
+
   const handleBookRide = () => {
     // Find the cycle product matching selected plan by ID
     let cycleId = '';
