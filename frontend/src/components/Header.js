@@ -17,7 +17,7 @@ const Header = () => {
           <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
             <span className="text-white font-bold text-lg">BB</span>
           </div>
-          <span className="text-xl font-bold text-gray-900">Blue Bolt Electric</span>
+          <span className="text-xl font-bold text-gray-900">Bolt91</span>
         </div>
 
         {/* Right Section */}
