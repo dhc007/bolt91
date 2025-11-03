@@ -621,8 +621,11 @@ const Checkout = ({ isOpen, onClose, onSuccess }) => {
                   <div className="space-y-2">
                     {cart.map((item) => (
                       <div key={item.id} className="flex justify-between text-sm">
-                        <span>{language === 'en' ? item.name : item.name_hi}</span>
-                        <span>₹{item.discounted_price} × {item.quantity}</span>
+                        <span>
+                          {language === 'en' ? item.name : item.name_hi}
+                          {item.selectedPlan && ` (${item.selectedPlan.name})`}
+                        </span>
+                        <span>₹{item.displayPrice || item.discounted_price} × {item.quantity}</span>
                       </div>
                     ))}
                   </div>
