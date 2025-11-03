@@ -524,7 +524,7 @@ app.add_middleware(
 @app.on_event("startup")
 async def startup_event():
     await initialize_products()
-    logger.info("Blue Bolt Electric API started")
+    logger.info("Bolt91 API started")
 
 
 @app.on_event("shutdown")
