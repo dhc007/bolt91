@@ -65,17 +65,12 @@ const ShoppingCart = ({ onCheckout }) => {
                   <h3 className="font-semibold text-gray-900">
                     {language === 'en' ? item.name : item.name_hi}
                   </h3>
-                  {item.selectedPlan && (
-                    <p className="text-xs text-blue-600 font-semibold mb-1">
-                      {item.selectedPlan.name} - {item.planDuration}
-                    </p>
-                  )}
                   <p className="text-sm text-gray-600">
-                    ₹{item.displayPrice || item.discounted_price} × {item.quantity}
+                    ₹{item.discounted_price} × {item.quantity}
                   </p>
-                  {item.category === 'cycle' && (
+                  {item.category === 'cycle' && item.security_deposit > 0 && (
                     <p className="text-xs text-gray-500">
-                      {t('Security Deposit', 'सुरक्षा जमा')}: ₹2,000 (1-7 days) / ₹5,000 (8+ days)
+                      {t('Security Deposit', 'सुरक्षा जमा')}: ₹{item.security_deposit}
                     </p>
                   )}
                 </div>
