@@ -94,14 +94,21 @@ const ShoppingCart = ({ onCheckout }) => {
                 <span className="text-gray-600">{t('Rental Amount', 'किराया राशि')}</span>
                 <span className="font-semibold">₹{total.toFixed(2)}</span>
               </div>
-              <div className="flex justify-between text-sm">
-                <span className="text-gray-600">{t('Security Deposit', 'सुरक्षा जमा')}</span>
-                <span className="font-semibold">₹{securityDeposit.toFixed(2)}</span>
-              </div>
+              {securityDeposit > 0 && (
+                <div className="flex justify-between text-sm">
+                  <span className="text-gray-600">{t('Security Deposit', 'सुरक्षा जमा')}</span>
+                  <span className="font-semibold">₹{securityDeposit.toFixed(2)}*</span>
+                </div>
+              )}
               <div className="flex justify-between text-lg font-bold pt-2 border-t border-gray-200">
                 <span>{t('Total', 'कुल')}</span>
                 <span>₹{grandTotal.toFixed(2)}</span>
               </div>
+              {securityDeposit > 0 && (
+                <p className="text-xs text-gray-500">
+                  *{t('Deposit varies by rental duration', 'जमा राशि किराये की अवधि के अनुसार भिन्न होती है')}
+                </p>
+              )}
             </div>
 
             <button
