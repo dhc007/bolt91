@@ -78,9 +78,17 @@ const Pricing = ({ onSelectPlan }) => {
 
   const handleBookRide = () => {
     if (cycleProduct) {
-      addToCart(cycleProduct);
+      const selectedPlanData = plans.find(p => p.id === selectedPlan);
+      // Add cycle with plan information
+      const cycleWithPlan = {
+        ...cycleProduct,
+        selectedPlan: selectedPlanData,
+        displayPrice: selectedPlanData.price,
+        planDuration: selectedPlanData.duration
+      };
+      addToCart(cycleWithPlan);
       if (onSelectPlan) {
-        onSelectPlan(plans.find(p => p.id === selectedPlan));
+        onSelectPlan(selectedPlanData);
       }
     }
   };
