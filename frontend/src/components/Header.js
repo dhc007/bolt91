@@ -15,7 +15,7 @@ const Header = () => {
         {/* Logo */}
         <div className="flex items-center space-x-2" data-testid="logo">
           <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
-            <span className="text-white font-bold text-lg">BB</span>
+            <span className="text-white font-bold text-lg">B91</span>
           </div>
           <span className="text-xl font-bold text-gray-900">Bolt91</span>
         </div>
