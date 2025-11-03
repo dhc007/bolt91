@@ -77,14 +77,23 @@ const Pricing = ({ onSelectPlan }) => {
   ];
 
   const handleBookRide = () => {
-    // Find the cycle product matching selected plan
-    const cycleProduct = cycleProducts.find(c => c.plan_type === selectedPlan);
+    // Find the cycle product matching selected plan by ID
+    let cycleId = '';
+    if (selectedPlan === 'daily') cycleId = 'cycle-daily';
+    else if (selectedPlan === 'weekly') cycleId = 'cycle-weekly';
+    else if (selectedPlan === 'monthly') cycleId = 'cycle-monthly';
+    
+    const cycleProduct = cycleProducts.find(c => c.id === cycleId);
+    console.log('Selected plan:', selectedPlan, 'Cycle ID:', cycleId, 'Found product:', cycleProduct);
+    
     if (cycleProduct) {
       addToCart(cycleProduct);
       const selectedPlanData = plans.find(p => p.id === selectedPlan);
       if (onSelectPlan) {
         onSelectPlan(selectedPlanData);
       }
+    } else {
+      console.error('Cycle product not found for plan:', selectedPlan);
     }
   };
 
