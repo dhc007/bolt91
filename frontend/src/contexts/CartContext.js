@@ -57,26 +57,11 @@ export const CartProvider = ({ children }) => {
   };
 
   const getTotal = () => {
-    return cart.reduce((sum, item) => {
-      // Use displayPrice if available (for cycles with selected plan), otherwise use discounted_price
-      const price = item.displayPrice || item.discounted_price;
-      return sum + (price * item.quantity);
-    }, 0);
+    return cart.reduce((sum, item) => sum + (item.discounted_price * item.quantity), 0);
   };
 
   const getSecurityDeposit = () => {
-    // Security deposit based on selected plan
-    const cycleItem = cart.find(item => item.category === 'cycle');
-    if (!cycleItem) return 0;
-    
-    // If plan is selected, use plan-specific deposit
-    if (cycleItem.selectedPlan) {
-      // Daily and Weekly: ₹2,000, Monthly: ₹5,000
-      return cycleItem.selectedPlan.id === 'monthly' ? 5000 : 2000;
-    }
-    
-    // Default to ₹2,000
-    return 2000;
+    return cart.reduce((sum, item) => sum + (item.security_deposit || 0), 0);
   };
 
   return (
