@@ -8,18 +8,18 @@ const Hero = ({ onBookNow }) => {
     <section
       className="relative h-[600px] bg-cover bg-center"
       style={{
-        backgroundImage: 'url(https://images.unsplash.com/photo-1735888877431-656ea7d272a4)'
+        backgroundImage: 'url(https://images.unsplash.com/photo-1717070882156-108ae2c5c343?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1ODF8MHwxfHNlYXJjaHwyfHx2YXJhbmFzaSUyMGdoYXRzfGVufDB8fHx8MTc2MjE3MTY4OXww&ixlib=rb-4.1.0&q=85)'
       }}
       data-testid="hero-section"
     >
       {/* Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent"></div>
+      <div className="absolute inset-0 bg-gradient-to-t from-white via-white/60 to-transparent"></div>
 
       {/* Content */}
       <div className="relative container mx-auto px-4 sm:px-6 h-full flex items-end pb-20">
         <div className="max-w-2xl">
           <h1 className="text-5xl sm:text-6xl font-bold text-gray-900 mb-4" data-testid="hero-headline">
-            {t('Explore Varanasi Electrically', 'वाराणसी की सैर करें बिजली से')}
+            {t('Explore Yourself? Explore Kashi!', 'खुद को खोजें? काशी को खोजें!')}
           </h1>
           <p className="text-xl text-gray-700 mb-8" data-testid="hero-subheadline">
             {t(
