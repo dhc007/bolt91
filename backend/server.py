@@ -155,18 +155,50 @@ async def initialize_products():
     count = await db.products.count_documents({})
     if count == 0:
         products = [
-            # Electric Cycle
+            # Electric Cycles - Different products for each plan
             {
-                "id": "cycle-1",
-                "name": "Premium Electric Cycle",
-                "name_hi": "प्रीमियम इलेक्ट्रिक साइकिल",
-                "description": "Premium e-bike with cutting-edge accessories",
-                "description_hi": "आधुनिक एक्सेसरीज़ के साथ प्रीमियम ई-बाइक",
+                "id": "cycle-daily",
+                "name": "Bolt91 E-Cycle (1 Day)",
+                "name_hi": "Bolt91 ई-साइकिल (1 दिन)",
+                "description": "Premium e-bike for day trips",
+                "description_hi": "दिन की यात्राओं के लिए प्रीमियम ई-बाइक",
                 "price": 499.0,
                 "discounted_price": 449.0,
                 "security_deposit": 2000.0,
                 "category": "cycle",
-                "image_url": "https://images.pexels.com/photos/5784358/pexels-photo-5784358.jpeg",
+                "plan_type": "daily",
+                "duration_days": 1,
+                "image_url": "https://customer-assets.emergentagent.com/job_whatsapp-connect-35/artifacts/whllq0kz_cycle-3-C5pvGfpN.jpg",
+                "created_at": datetime.now(timezone.utc).isoformat()
+            },
+            {
+                "id": "cycle-weekly",
+                "name": "Bolt91 E-Cycle (1 Week)",
+                "name_hi": "Bolt91 ई-साइकिल (1 सप्ताह)",
+                "description": "Premium e-bike for week-long adventures",
+                "description_hi": "सप्ताह भर के रोमांच के लिए प्रीमियम ई-बाइक",
+                "price": 1999.0,
+                "discounted_price": 1799.0,
+                "security_deposit": 2000.0,
+                "category": "cycle",
+                "plan_type": "weekly",
+                "duration_days": 7,
+                "image_url": "https://customer-assets.emergentagent.com/job_whatsapp-connect-35/artifacts/whllq0kz_cycle-3-C5pvGfpN.jpg",
+                "created_at": datetime.now(timezone.utc).isoformat()
+            },
+            {
+                "id": "cycle-monthly",
+                "name": "Bolt91 E-Cycle (1 Month)",
+                "name_hi": "Bolt91 ई-साइकिल (1 महीना)",
+                "description": "Premium e-bike for long-term exploration",
+                "description_hi": "लंबी अवधि की खोज के लिए प्रीमियम ई-बाइक",
+                "price": 4999.0,
+                "discounted_price": 4499.0,
+                "security_deposit": 5000.0,
+                "category": "cycle",
+                "plan_type": "monthly",
+                "duration_days": 30,
+                "image_url": "https://customer-assets.emergentagent.com/job_whatsapp-connect-35/artifacts/whllq0kz_cycle-3-C5pvGfpN.jpg",
                 "created_at": datetime.now(timezone.utc).isoformat()
             },
             # Tech Accessories (No security deposit for accessories)
