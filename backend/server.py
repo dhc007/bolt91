@@ -169,7 +169,7 @@ async def initialize_products():
                 "image_url": "https://images.pexels.com/photos/5784358/pexels-photo-5784358.jpeg",
                 "created_at": datetime.now(timezone.utc).isoformat()
             },
-            # Tech Accessories
+            # Tech Accessories (No security deposit for accessories)
             {
                 "id": "acc-1",
                 "name": "Meta Ray-Ban Smart Glasses",
@@ -178,7 +178,7 @@ async def initialize_products():
                 "description_hi": "हाथों के बिना पल कैद करें",
                 "price": 1000.0,
                 "discounted_price": 1000.0,
-                "security_deposit": 5000.0,
+                "security_deposit": 0.0,
                 "category": "accessory",
                 "image_url": "https://images.unsplash.com/photo-1572635196237-14b3f281503f",
                 "created_at": datetime.now(timezone.utc).isoformat()
@@ -191,7 +191,7 @@ async def initialize_products():
                 "description_hi": "आपकी दृष्टि में नेविगेशन",
                 "price": 250.0,
                 "discounted_price": 250.0,
-                "security_deposit": 1500.0,
+                "security_deposit": 0.0,
                 "category": "accessory",
                 "image_url": "https://images.unsplash.com/photo-1581598584785-09d9b7aa2b05",
                 "created_at": datetime.now(timezone.utc).isoformat()
@@ -204,7 +204,7 @@ async def initialize_products():
                 "description_hi": "4K एडवेंचर रिकॉर्डिंग",
                 "price": 1200.0,
                 "discounted_price": 1200.0,
-                "security_deposit": 8000.0,
+                "security_deposit": 0.0,
                 "category": "accessory",
                 "image_url": "https://images.unsplash.com/photo-1690176483540-421999eea5dd",
                 "created_at": datetime.now(timezone.utc).isoformat()
@@ -217,7 +217,7 @@ async def initialize_products():
                 "description_hi": "कभी चार्ज खत्म नहीं",
                 "price": 150.0,
                 "discounted_price": 150.0,
-                "security_deposit": 500.0,
+                "security_deposit": 0.0,
                 "category": "accessory",
                 "image_url": "https://images.pexels.com/photos/518530/pexels-photo-518530.jpeg",
                 "created_at": datetime.now(timezone.utc).isoformat()
@@ -230,7 +230,7 @@ async def initialize_products():
                 "description_hi": "सुरक्षित नेविगेशन",
                 "price": 100.0,
                 "discounted_price": 100.0,
-                "security_deposit": 300.0,
+                "security_deposit": 0.0,
                 "category": "accessory",
                 "image_url": "https://images.unsplash.com/photo-1761721576781-baaf47945242",
                 "created_at": datetime.now(timezone.utc).isoformat()
@@ -243,7 +243,7 @@ async def initialize_products():
                 "description_hi": "अपनी यात्रा को संगीतमय बनाएं",
                 "price": 200.0,
                 "discounted_price": 200.0,
-                "security_deposit": 1000.0,
+                "security_deposit": 0.0,
                 "category": "accessory",
                 "image_url": "https://images.unsplash.com/photo-1589256469067-ea99122bbdc4",
                 "created_at": datetime.now(timezone.utc).isoformat()
