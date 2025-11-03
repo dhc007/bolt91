@@ -65,8 +65,13 @@ const ShoppingCart = ({ onCheckout }) => {
                   <h3 className="font-semibold text-gray-900">
                     {language === 'en' ? item.name : item.name_hi}
                   </h3>
+                  {item.selectedPlan && (
+                    <p className="text-xs text-blue-600 font-semibold mb-1">
+                      {item.selectedPlan.name} - {item.planDuration}
+                    </p>
+                  )}
                   <p className="text-sm text-gray-600">
-                    ₹{item.discounted_price} × {item.quantity}
+                    ₹{item.displayPrice || item.discounted_price} × {item.quantity}
                   </p>
                   {item.category === 'cycle' && (
                     <p className="text-xs text-gray-500">
