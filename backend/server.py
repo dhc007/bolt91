@@ -371,24 +371,34 @@ async def create_booking(booking_data: BookingCreate):
         # Create product lookup
         product_map = {p["id"]: p for p in products}
         
-        # Calculate totals
-        total_amount = 0.0
-        security_deposit = 0.0
-        
-        for item in booking_data.cart_items:
-            product = product_map.get(item.product_id)
-            if product:
-                total_amount += product["discounted_price"] * item.quantity
-                security_deposit += product["security_deposit"]
-        
         # Calculate number of days
         from datetime import datetime as dt
         start_date = dt.fromisoformat(booking_data.rental_start.replace('Z', '+00:00'))
         end_date = dt.fromisoformat(booking_data.rental_end.replace('Z', '+00:00'))
         num_days = max(1, (end_date - start_date).days)
         
+        # Calculate totals
+        total_amount = 0.0
+        has_cycle = False
+        
+        for item in booking_data.cart_items:
+            product = product_map.get(item.product_id)
+            if product:
+                total_amount += product["discounted_price"] * item.quantity
+                if product["category"] == "cycle":
+                    has_cycle = True
+        
         # Adjust total for rental period
         total_amount = total_amount * num_days
+        
+        # Security deposit only for cycles based on rental duration
+        # ₹2k for daily/weekly (1-7 days), ₹5k for monthly (8+ days)
+        security_deposit = 0.0
+        if has_cycle:
+            if num_days <= 7:
+                security_deposit = 2000.0
+            else:
+                security_deposit = 5000.0
         
         # Grand total (rental + security deposit)
         grand_total = total_amount + security_deposit
