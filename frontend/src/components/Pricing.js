@@ -184,10 +184,10 @@ const Pricing = ({ onSelectPlan }) => {
           <div className="relative">
             <div className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-2xl p-8 lg:p-12">
               <div className="aspect-square relative">
-                {cycleProduct && (
+                {cycleProducts.length > 0 && (
                   <img
-                    src={cycleProduct.image_url}
-                    alt={t('Premium Electric Cycle', 'प्रीमियम इलेक्ट्रिक साइकिल')}
+                    src={cycleProducts[0].image_url}
+                    alt={t('Bolt91 E-Cycle', 'Bolt91 ई-साइकिल')}
                     className="w-full h-full object-contain"
                   />
                 )}
