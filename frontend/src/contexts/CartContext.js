@@ -61,7 +61,10 @@ export const CartProvider = ({ children }) => {
   };
 
   const getSecurityDeposit = () => {
-    return cart.reduce((sum, item) => sum + item.security_deposit, 0);
+    // Security deposit only for cycles - will be calculated based on duration at checkout
+    // For display purposes, show base deposit (₹2k)
+    const hasCycle = cart.some(item => item.category === 'cycle');
+    return hasCycle ? 2000 : 0;
   };
 
   return (
