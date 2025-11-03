@@ -1,9 +1,41 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
-import { Check } from 'lucide-react';
+import { useCart } from '../contexts/CartContext';
+import axios from 'axios';
+
+const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+const API = `${BACKEND_URL}/api`;
 
 const Pricing = ({ onSelectPlan }) => {
   const { t } = useLanguage();
+  const { addToCart } = useCart();
+  const [cycleProduct, setCycleProduct] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchCycle = async () => {
+      try {
+        const response = await axios.get(`${API}/products`);
+        const cycle = response.data.find(p => p.category === 'cycle');
+        setCycleProduct(cycle);
+      } catch (error) {
+        console.error('Error fetching cycle:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchCycle();
+  }, []);
+
+  const handleSelectPlan = (plan) => {
+    if (cycleProduct) {
+      addToCart(cycleProduct);
+    }
+    if (onSelectPlan) {
+      onSelectPlan(plan);
+    }
+  };
 
   const plans = [
     {
