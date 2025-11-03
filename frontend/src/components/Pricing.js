@@ -77,16 +77,11 @@ const Pricing = ({ onSelectPlan }) => {
   ];
 
   const handleBookRide = () => {
+    // Find the cycle product matching selected plan
+    const cycleProduct = cycleProducts.find(c => c.plan_type === selectedPlan);
     if (cycleProduct) {
+      addToCart(cycleProduct);
       const selectedPlanData = plans.find(p => p.id === selectedPlan);
-      // Add cycle with plan information
-      const cycleWithPlan = {
-        ...cycleProduct,
-        selectedPlan: selectedPlanData,
-        displayPrice: selectedPlanData.price,
-        planDuration: selectedPlanData.duration
-      };
-      addToCart(cycleWithPlan);
       if (onSelectPlan) {
         onSelectPlan(selectedPlanData);
       }
