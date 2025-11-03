@@ -14,10 +14,11 @@ const Header = () => {
       <div className="container mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
         {/* Logo */}
         <div className="flex items-center space-x-2" data-testid="logo">
-          <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
-            <span className="text-white font-bold text-lg">B91</span>
-          </div>
-          <span className="text-xl font-bold text-gray-900">Bolt91</span>
+          <img 
+            src="https://customer-assets.emergentagent.com/job_whatsapp-connect-35/artifacts/kv5b31vd_Screenshot%202025-11-03%20at%206.27.43%E2%80%AFPM.png"
+            alt="Bolt91"
+            className="h-8 w-auto"
+          />
         </div>
 
         {/* Right Section */}
