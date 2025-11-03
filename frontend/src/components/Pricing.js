@@ -10,24 +10,24 @@ const API = `${BACKEND_URL}/api`;
 const Pricing = ({ onSelectPlan }) => {
   const { t } = useLanguage();
   const { addToCart } = useCart();
-  const [cycleProduct, setCycleProduct] = useState(null);
+  const [cycleProducts, setCycleProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [selectedPlan, setSelectedPlan] = useState('daily');
 
   useEffect(() => {
-    const fetchCycle = async () => {
+    const fetchCycles = async () => {
       try {
         const response = await axios.get(`${API}/products`);
-        const cycle = response.data.find(p => p.category === 'cycle');
-        setCycleProduct(cycle);
+        const cycles = response.data.filter(p => p.category === 'cycle');
+        setCycleProducts(cycles);
       } catch (error) {
-        console.error('Error fetching cycle:', error);
+        console.error('Error fetching cycles:', error);
       } finally {
         setLoading(false);
       }
     };
 
-    fetchCycle();
+    fetchCycles();
   }, []);
 
   const plans = [
