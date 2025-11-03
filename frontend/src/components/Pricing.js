@@ -168,7 +168,7 @@ const Pricing = ({ onSelectPlan }) => {
 
             <button
               onClick={handleBookRide}
-              disabled={!cycleProduct}
+              disabled={cycleProducts.length === 0}
               className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-xl text-lg transition-all duration-200 hover:-translate-y-1 shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed"
               data-testid="book-ride-button"
             >
