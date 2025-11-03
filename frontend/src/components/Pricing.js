@@ -101,7 +101,7 @@ const Pricing = ({ onSelectPlan }) => {
               </div>
 
               <button
-                onClick={() => onSelectPlan(plan)}
+                onClick={() => handleSelectPlan(plan)}
                 className={`w-full py-3 rounded-xl font-semibold transition-all duration-200 ${
                   plan.popular
                     ? 'bg-blue-600 hover:bg-blue-700 text-white'
