@@ -195,7 +195,7 @@ const Pricing = ({ onSelectPlan }) => {
               
               <div className="mt-6 text-center">
                 <h3 className="text-2xl font-bold text-gray-900 mb-2">
-                  {t('Premium Electric Cycle', 'प्रीमियम इलेक्ट्रिक साइकिल')}
+                  {t('Bolt91 E-Cycle', 'Bolt91 ई-साइकिल')}
                 </h3>
                 <p className="text-gray-600 mb-4">
                   {t('Explore Kashi in eco-friendly style', 'पर्यावरण के अनुकूल शैली में काशी की खोज करें')}
