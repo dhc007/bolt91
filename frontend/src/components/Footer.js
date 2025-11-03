@@ -10,7 +10,7 @@ const Footer = () => {
       <div className="container mx-auto px-4 sm:px-6">
         <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
           <div className="text-gray-600 text-sm">
-            © 2024 Blue Bolt Electric. {t('All rights reserved', 'सभी अधिकार सुरक्षित')}
+            © 2024 Bolt91. {t('All rights reserved', 'सभी अधिकार सुरक्षित')}
           </div>
           <div className="flex items-center space-x-6">
             <a href="#" className="text-gray-600 hover:text-blue-600 text-sm transition-colors">
