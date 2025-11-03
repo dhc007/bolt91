@@ -19,6 +19,7 @@ const Pricing = ({ onSelectPlan }) => {
       try {
         const response = await axios.get(`${API}/products`);
         const cycles = response.data.filter(p => p.category === 'cycle');
+        console.log('Fetched cycles:', cycles);
         setCycleProducts(cycles);
       } catch (error) {
         console.error('Error fetching cycles:', error);
