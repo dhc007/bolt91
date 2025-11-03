@@ -57,7 +57,11 @@ export const CartProvider = ({ children }) => {
   };
 
   const getTotal = () => {
-    return cart.reduce((sum, item) => sum + (item.discounted_price * item.quantity), 0);
+    return cart.reduce((sum, item) => {
+      // Use displayPrice if available (for cycles with selected plan), otherwise use discounted_price
+      const price = item.displayPrice || item.discounted_price;
+      return sum + (price * item.quantity);
+    }, 0);
   };
 
   const getSecurityDeposit = () => {
