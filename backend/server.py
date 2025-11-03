@@ -257,7 +257,7 @@ async def initialize_products():
 
 @api_router.get("/")
 async def root():
-    return {"message": "Blue Bolt Electric API", "whatsapp": WHATSAPP_NUMBER}
+    return {"message": "Bolt91 API", "whatsapp": WHATSAPP_NUMBER}
 
 
 @api_router.get("/products", response_model=List[Product])
