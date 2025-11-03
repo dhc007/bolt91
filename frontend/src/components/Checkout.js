@@ -656,8 +656,8 @@ const Checkout = ({ isOpen, onClose, onSuccess }) => {
                 />
                 <span className="text-sm text-gray-700">
                   {t(
-                    'I agree to the terms and conditions and authorize Blue Bolt Electric to process my booking.',
-                    'मैं नियमों और शर्तों से सहमत हूं और ब्लू बोल्ट इलेक्ट्रिक को अपनी बुकिंग प्रोसेस करने के लिए अधिकृत करता हूं।'
+                    'I agree to the terms and conditions and authorize Bolt91 to process my booking.',
+                    'मैं नियमों और शर्तों से सहमत हूं और Bolt91 को अपनी बुकिंग प्रोसेस करने के लिए अधिकृत करता हूं।'
                   )}
                 </span>
               </label>
