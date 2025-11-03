@@ -68,9 +68,11 @@ const ShoppingCart = ({ onCheckout }) => {
                   <p className="text-sm text-gray-600">
                     ₹{item.discounted_price} × {item.quantity}
                   </p>
-                  <p className="text-xs text-gray-500">
-                    {t('Security Deposit', 'सुरक्षा जमा')}: ₹{item.security_deposit}
-                  </p>
+                  {item.category === 'cycle' && (
+                    <p className="text-xs text-gray-500">
+                      {t('Security Deposit', 'सुरक्षा जमा')}: ₹2,000 (1-7 days) / ₹5,000 (8+ days)
+                    </p>
+                  )}
                 </div>
                 <button
                   onClick={() => removeFromCart(item.id)}
