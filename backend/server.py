@@ -424,11 +424,11 @@ async def create_booking(booking_data: BookingCreate):
             payment_link = razorpay_client.payment_link.create({
                 "amount": int(grand_total * 100),  # Convert to paise
                 "currency": "INR",
-                "description": f"Blue Bolt Electric - Booking {booking.booking_id}",
+                "description": f"Bolt91 E-Bike Rental - Booking {booking.booking_id}",
                 "customer": {
                     "name": booking.name,
                     "contact": booking.mobile,
-                    "email": booking.email or f"{booking.mobile}@bluebolt.com"
+                    "email": booking.email or f"{booking.mobile}@bolt91.com"
                 },
                 "notify": {
                     "sms": False,
