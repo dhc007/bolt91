@@ -131,7 +131,7 @@ const Pricing = ({ onSelectPlan }) => {
             {plans.map((plan) => (
               <div
                 key={plan.id}
-                onClick={() => setSelectedPlan(plan.id)}
+                onClick={() => handlePlanClick(plan.id)}
                 className={`relative bg-white rounded-2xl p-6 cursor-pointer transition-all duration-200 border-2 ${
                   selectedPlan === plan.id
                     ? 'border-blue-600 shadow-xl scale-105'
