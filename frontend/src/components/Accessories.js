@@ -43,12 +43,12 @@ const Accessories = () => {
       <div className="container mx-auto px-4 sm:px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">
-            {t('Enhance Your Experience', 'अपना अनुभव बेहतर बनाएं')}
+            {t('Add Premium Accessories', 'प्रीमियम एक्सेसरीज़ जोड़ें')}
           </h2>
           <p className="text-lg text-gray-600">
             {t(
-              'Premium tech accessories for modern explorers',
-              'आधुनिक यात्रियों के लिए प्रीमियम तकनीकी एक्सेसरीज़'
+              'Enhance your ride with cutting-edge tech accessories',
+              'अत्याधुनिक तकनीकी एक्सेसरीज़ के साथ अपनी सवारी को बेहतर बनाएं'
             )}
           </p>
         </div>
