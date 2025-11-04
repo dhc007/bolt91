@@ -1,21 +1,21 @@
-# Blue Bolt Electric - E-Bike Rental Website
+Blue Bolt Electric - E-Bike Rentals in Kaashi
 
 A clean, minimalist website for electric cycle rentals in Varanasi with WhatsApp integration and automated Razorpay payment processing.
 
-## 🚀 Live Features
+Live Features
 
-✅ **Bilingual Support** - English/Hindi toggle
-✅ **Premium E-Bike** - Single model with competitive pricing
-✅ **6 Tech Accessories** - Smart glasses, helmet, GoPro, power bank, phone mount, speaker
-✅ **Shopping Cart** - Real-time updates with localStorage
-✅ **6-Step Checkout** - Contact, KYC, Emergency, Duration, Delivery, Review
-✅ **OTP Verification** - Mock SMS verification
-✅ **KYC Upload** - ID proof and selfie
-✅ **Razorpay Integration** - Automated payment link generation
-✅ **WhatsApp Integration** - Direct booking communication to +91 77098 92835
-✅ **Responsive Design** - Mobile-first approach
+Bilingual Support - English/Hindi toggle
+Premium E-Bike - Single model with competitive pricing
+6 Tech Accessories - Smart glasses, helmet, GoPro, power bank, phone mount, speaker
+Shopping Cart - Real-time updates with localStorage
+6-Step Checkout - Contact, KYC, Emergency, Duration, Delivery, Review
+OTP Verification - Mock SMS verification
+KYC Upload - ID proof and selfie
+Razorpay Integration - Automated payment link generation
+WhatsApp Integration - Direct booking communication to +91 77098 92835
+Responsive Design - Mobile-first approach
 
-## 🎯 Quick Start
+Quick Start
 
 ```bash
 # Check services
@@ -29,7 +29,7 @@ tail -f /var/log/supervisor/backend.*.log
 tail -f /var/log/supervisor/frontend.*.log
 ```
 
-## 📱 Test Booking Flow
+Test Booking Flow
 
 1. **Open the website** (frontend is already running)
 2. **Browse pricing** - See 3 plans (Daily ₹449, Weekly ₹1,799, Monthly ₹4,499)
@@ -41,7 +41,7 @@ tail -f /var/log/supervisor/frontend.*.log
 8. **Complete booking** - Get booking ID and payment link
 9. **WhatsApp redirect** - Automatically opens WhatsApp with booking details
 
-## 🧪 API Testing
+API Testing
 
 ```bash
 # Test products
@@ -73,15 +73,13 @@ curl -X POST http://localhost:8001/api/booking/create \
   }'
 ```
 
-## 💳 Razorpay Test
+Razorpay Test
 
-- **Test Key ID**: rzp_test_RbFwVC6snkmj8S
-- **Test Secret**: bWu45zhh0y5sdxo0BOdF9lJu
-- **Test Cards**: 
+- Test Cards: 
   - Success: 4111 1111 1111 1111
   - Any CVV, future expiry
 
-## 📂 Key Files
+ Key Files
 
 ```
 /app/
@@ -101,7 +99,7 @@ curl -X POST http://localhost:8001/api/booking/create \
 │       └── Success.js         # Booking confirmation
 ```
 
-## 🌐 Endpoints
+Endpoints
 
 - `GET /api/` - Health check
 - `GET /api/products` - All products
@@ -112,46 +110,42 @@ curl -X POST http://localhost:8001/api/booking/create \
 - `POST /api/kyc/upload` - Upload KYC
 - `POST /api/payment/webhook` - Razorpay webhook
 
-## 🎨 Design Reference
+Design Reference
 
-Inspired by: https://magic-doc-scribe.lovable.app
 - Clean white backgrounds
 - Generous spacing
 - Smooth transitions
 - Card-based layouts
 - Minimal color palette (Blue #2563EB primary)
 
-## 📞 WhatsApp Number
-
-**+91 77098 92835**
 
 Booking messages include:
 - Booking ID
 - Customer name
 - Razorpay payment link
 
-## 🔧 Environment Variables
+Environment Variables
 
-### Backend
+Backend
 - `RAZORPAY_KEY_ID` - Test key configured
 - `RAZORPAY_KEY_SECRET` - Test secret configured
 - `WHATSAPP_NUMBER` - +917709892835
 - `MONGO_URL` - MongoDB connection
 
-### Frontend
+Frontend
 - `REACT_APP_BACKEND_URL` - Already configured
 
-## 📦 Products in Database
+Products in Database
 
-1. **Electric Cycle** - ₹499 → ₹449/day (₹2,000 deposit)
-2. **Meta Ray-Ban Smart Glasses** - ₹1,000/day (₹5,000 deposit)
-3. **Smart Helmet with HUD** - ₹250/day (₹1,500 deposit)
-4. **GoPro Hero 11** - ₹1,200/day (₹8,000 deposit)
-5. **Portable Power Bank** - ₹150/day (₹500 deposit)
-6. **Premium Phone Mount** - ₹100/day (₹300 deposit)
-7. **Bluetooth Speaker** - ₹200/day (₹1,000 deposit)
+1. Electric Cycle - ₹499 → ₹449/day (₹2,000 deposit)
+2. Meta Ray-Ban Smart Glasses - ₹1,000/day (₹5,000 deposit)
+3. Smart Helmet with HUD - ₹250/day (₹1,500 deposit)
+4. GoPro Hero 11 - ₹1,200/day (₹8,000 deposit)
+5. Portable Power Bank - ₹150/day (₹500 deposit)
+6. Premium Phone Mount - ₹100/day (₹300 deposit)
+7. Bluetooth Speaker - ₹200/day (₹1,000 deposit)
 
-## ✨ User Flow
+User Flow
 
 1. Land on hero → See "Explore Varanasi Electrically"
 2. Click "Book Your Ride" → Scroll to pricing
@@ -162,7 +156,3 @@ Booking messages include:
 7. Payment link generated → WhatsApp opens
 8. Customer pays → Webhook confirms → E-bike delivered
 
----
-
-**Status**: ✅ **FULLY FUNCTIONAL**
-All features implemented, tested, and working!
